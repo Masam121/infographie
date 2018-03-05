@@ -1,11 +1,21 @@
 #include "ofApp.h"
 
 
+void testImport() {
+	ofLog() << "Importing image";
+}
+
+void testExport() {
+	ofLog() << "Exporting image";
+}
+
 //--------------------------------------------------------------
 void ofApp::setup(){
-	button = Button();
-	button.setup(10, 10, 100, 20, "Import image");
 	renderer.setup();
+
+	buttonList.push_back(new Button(10, 10, 100, 30, &testImport, "Import image"));
+	buttonList.push_back(new Button(10, 50, 100, 30, &testExport, "Export image"));
+
 }
 
 //--------------------------------------------------------------
@@ -15,8 +25,10 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	button.draw();
 	renderer.draw();
+	for (Button* button : buttonList) {
+		button->draw();
+	}
 }
 
 //--------------------------------------------------------------
@@ -41,7 +53,11 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+	if (button == 0) {
+		for (Button* button : buttonList) {
+			button->isClicked(x, y);
+		}
+	}
 }
 
 //--------------------------------------------------------------
@@ -73,3 +89,4 @@ void ofApp::gotMessage(ofMessage msg){
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
 }
+

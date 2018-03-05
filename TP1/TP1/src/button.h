@@ -4,15 +4,20 @@
 
 class Button {
 	public:
-		void setup(int x, int y, int w, int h, string text);
-		void update();
+		Button(int x, int y, int w, int h, void(*function)(), string text);
 		void draw();
-		void setColor(int r, int g, int b);
+		void setColorText(int r, int g, int b);
+		void setColorBackground(int r, int g, int b);
+		void isClicked(int x, int y);
 
 		ofRectangle buttonBackground;
 		string textContent;
 		int xPos, yPos, width, height;
-		int red = 0;
-		int green = 0;
-		int blue = 0;
+		int redText = 255;
+		int greenText = 255;
+		int blueText = 255;
+		int redBackground = 0;
+		int greenBackground = 0;
+		int blueBackground = 0;
+		void(*onClickFunction)();
 };
