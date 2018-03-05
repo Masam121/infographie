@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 #include "button.h"
+#include "files.h"
+#include "renderer.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,4 +25,6 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 		Button button;
+		Files files;
+		Renderer renderer;
 };
