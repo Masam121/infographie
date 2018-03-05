@@ -30,8 +30,14 @@ void Renderer::draw()
 }
 
 
-void Renderer::addImage(string imagePath) {
-	ofImage newImage;
-	newImage.load(imagePath);
-	images.push_back(newImage);
+void Renderer::addImage() {
+	try {
+		string imagePath = files.getFile();
+		ofImage newImage;
+		newImage.load(imagePath);
+		images.push_back(newImage);
+	}
+	catch (exception& e) {
+		ofLog() << e.what();
+	}
 }

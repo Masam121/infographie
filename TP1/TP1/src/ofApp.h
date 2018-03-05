@@ -24,7 +24,6 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		Files files;
 		Renderer renderer;
 		list<Button*> buttonList;
 };

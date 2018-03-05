@@ -1,10 +1,5 @@
 #include "ofApp.h"
 
-
-void testImport() {
-	ofLog() << "Importing image";
-}
-
 void testExport() {
 	ofLog() << "Exporting image";
 }
@@ -13,7 +8,7 @@ void testExport() {
 void ofApp::setup(){
 	renderer.setup();
 
-	buttonList.push_back(new Button(10, 10, 100, 30, &testImport, "Import image"));
+	buttonList.push_back(new Button(10, 10, 100, 30, &renderer.addImage , "Import image"));
 	buttonList.push_back(new Button(10, 50, 100, 30, &testExport, "Export image"));
 
 }
