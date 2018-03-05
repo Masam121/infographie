@@ -1,13 +1,18 @@
 #include "ofApp.h"
 
 
-void testMessage() {
-	ofLog() << "A button has been pressed";
+void testImport() {
+	ofLog() << "Importing image";
+}
+
+void testExport() {
+	ofLog() << "Exporting image";
 }
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	buttonList.push_back(new Button(10, 10, 150, 30, &testMessage, "Import image by clicking here"));
+	buttonList.push_back(new Button(10, 10, 100, 30, &testImport, "Import image"));
+	buttonList.push_back(new Button(10, 50, 100, 30, &testExport, "Export image"));
 }
 
 //--------------------------------------------------------------
